@@ -1,0 +1,163 @@
+﻿options:
+	Prefix: &2S&fNW&6&lMETIN &8&l»&7
+	parca: Gray Dye
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+
+command /taşayarla:
+	trigger:
+		if player has permission "taş.admin":
+			if targeted block is obsidian:
+				if {ozeltas::%location of targeted block%} is not set:
+					set {_loc} to location of targeted block
+					set {ozeltas::%{_loc}%} to {_loc}
+					send "{@Prefix} Önünüzdeki obsidyen artık metintaşı, metintaşının özelliğini kaldırmak için /taşayarla yazabilirsin."
+					stop
+				else if {ozeltas::%location of targeted block%} is set:
+					clear {ozeltas::%location of targeted block%}
+					send "{@Prefix} Önünüzdeki obsidyen artık metintaşı değil, tekrar metintaşı yapmak için /taşayarla yazabilirsin."
+			else:
+				send "{@Prefix} Bunu kullanabilmek için bir obsidyene bakman gerek!"
+		else:
+			send "{@Prefix} Bunun için iznin yok"
+
+ 
+on break of obsidian:
+	if {ozeltas::%location of event-block%} is set:	
+		if {ozeltas::can} is equal to 20:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			spawn 7 spider at event-block
+			broadcast "&7Birisi Metin Taşını Buldu!"
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 19:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 18:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 17:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 16:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 15:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			spawn 3 zombie at event-block
+			spawn 3 skeleton at event-block
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 14:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 13:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 12:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 11:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 10:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			spawn 3 zombie at event-block
+			spawn 3 spider at event-block
+			spawn 3 skeleton at event-block
+			stop
+		else if {ozeltas::can} is equal to 9:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			spawn 3 spider at event-block
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 8:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 7:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 6:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			spawn 3 spider at event-block
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 5:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			spawn 6 zombie at event-block
+			spawn 3 skeleton at event-block
+			spawn 9 spider at event-block
+			stop
+		else if {ozeltas::can} is equal to 4:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			stop
+		else if {ozeltas::can} is equal to 3:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			spawn 6 zombie at event-block
+			spawn 3 skeleton at event-block
+			spawn 5 spider at event-block
+			stop
+		else if {ozeltas::can} is equal to 2:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			spawn 9 zombie at event-block
+			spawn 3 skeleton at event-block
+			stop
+		else if {ozeltas::can} is equal to 1:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			remove 1 from {ozeltas::can}
+			cancel event
+			spawn 12 zombie at event-block
+			spawn 15 spider at event-block
+			spawn 3 skeleton at event-block
+			stop
+		else if {ozeltas::can} is equal to 0:
+			send "&f[&a%{ozeltas::can}% &7x &c❤&f]"
+			cancel event
+			drop 2 diamond
+			drop 16 iron ingot
+			drop 20 redstone
+			drop 2 coal block
+			drop 5 paper of protection 1 named "&2S&fNW&6Credi"
+			drop 1 {@parca} of protection 1 named "&2S&fNW&c-&6MetinTasiParcasi"
+			drop 3 book of protection 1 named "&2S&fNW&c-&6BeceriKitabi"
+			drop 1 {@yuzyang} of protection 1 named "&6100 Yang"
+			drop 5 {@onyang} of protection 1 named "&610 Yang"
+			set {ozeltas::can} to 20
+			stop
+		set {ozeltas::can} to 20
+		

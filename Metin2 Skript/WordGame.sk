@@ -1,0 +1,294 @@
+options:
+	kelimeoyunu1: New-World-Order
+	kelimeoyunu2: TR-Rep-114d4
+	kelimeoyunu3: 4Gd1vRazL
+	kelimeoyunu4: 44fzGdonE
+	kelimeoyunu5: 7v11zHnEzO
+	kelimeoyunu6: PvpArea8c1Dqa
+	kelimeoyunu7: 17MaTTfe84
+	kelimeoyunu8: YouFgap7ez2
+	kelimeoyunu9: LdasVegdasAez11
+	kelimeoyunu10: f4z11dqea2sz
+command /kelimeoyunu:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu1}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif} to true
+		wait 5 minute
+		set {kelimeoyunuaktif} to false
+		clear {kelimeoyunu}
+
+on chat:
+	if {kelimeoyunuaktif} is true:
+		if message is "New-World-Order":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif} to false
+			clear {kelimeoyunu1}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu2:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu2}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif2} to true
+		wait 5 minute
+		set {kelimeoyunuaktif2} to false
+		clear {kelimeoyunu2}
+
+on chat:
+	if {kelimeoyunuaktif2} is true:
+		if message is "TR-Rep-114d4":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif2} to false
+			clear {kelimeoyunu2}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu3:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu3}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif3} to true
+		wait 5 minute
+		set {kelimeoyunuaktif3} to false
+		clear {kelimeoyunu3}
+
+on chat:
+	if {kelimeoyunuaktif3} is true:
+		if message is "4Gd1vRazL":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif3} to false
+			clear {kelimeoyunu3}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu4:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu4}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif4} to true
+		wait 5 minute
+		set {kelimeoyunuaktif4} to false
+		clear {kelimeoyunu4}
+
+on chat:
+	if {kelimeoyunuaktif4} is true:
+		if message is "44fzGdonE":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif4} to false
+			clear {kelimeoyunu4}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu5:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu5}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif5} to true
+		wait 5 minute
+		set {kelimeoyunuaktif5} to false
+		clear {kelimeoyunu5}
+
+on chat:
+	if {kelimeoyunuaktif5} is true:
+		if message is "7v11zHnEzO":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif5} to false
+			clear {kelimeoyunu5}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu6:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu6}"
+		broadcast " "
+		broadcast "&6&m---------&6[ &bKelime Oyunu &6]&6&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif6} to true
+		wait 5 minute
+		set {kelimeoyunuaktif6} to false
+		clear {kelimeoyunu6}
+
+on chat:
+	if {kelimeoyunuaktif6} is true:
+		if message is "PvpArea8c1Dqa":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif6} to false
+			clear {kelimeoyunu6}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu7:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu7}"
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif7} to true
+		wait 5 minute
+		set {kelimeoyunuaktif7} to false
+		clear {kelimeoyunu7}
+
+on chat:
+	if {kelimeoyunuaktif7} is true:
+		if message is "17MaTTfe84":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif7} to false
+			clear {kelimeoyunu7}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu8:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu8}"
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif8} to true
+		wait 5 minute
+		set {kelimeoyunuaktif8} to false
+		clear {kelimeoyunu8}
+
+on chat:
+	if {kelimeoyunuaktif8} is true:
+		if message is "YouFgap7ez2":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif8} to false
+			clear {kelimeoyunu8}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu9:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu9}"
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif9} to true
+		wait 5 minute
+		set {kelimeoyunuaktif9} to false
+		clear {kelimeoyunu9}
+
+on chat:
+	if {kelimeoyunuaktif9} is true:
+		if message is "LdasVegdasAez11":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif9} to false
+			clear {kelimeoyunu9}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+command /kelimeoyunu10:
+	executable by: console
+	trigger:
+		broadcast " "
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		broadcast " "
+		broadcast "    &7Asagidaki cumleyi yaz ve &2S&fNW&6Credi &7kap!"
+		broadcast "    &6{@kelimeoyunu10}"
+		broadcast " "
+		broadcast "&6&l&m---------&6[ &bKelime Oyunu &6]&6&l&m---------"
+		wait 1 tick
+		set {kelimeoyunuaktif10} to true
+		wait 5 minute
+		set {kelimeoyunuaktif10} to false
+		clear {kelimeoyunu10}
+
+on chat:
+	if {kelimeoyunuaktif10} is true:
+		if message is "f4z11dqea2sz":
+			wait 5 tick
+			broadcast "&2&lS&f&lNW&6&lGame &f&l» &b%player% &7kelime oyununu kazandi."
+			set {kelimeoyunuaktif10} to false
+			clear {kelimeoyunu10}
+			give 1 paper of protection 1 named "&2S&fNW&6Credi" to player
+
+
+every 30 minute:
+	set {kelime} to a random integer between 1 and 10
+	if {kelime} is 1:
+		execute server command "kelimeoyunu"
+	if {kelime} is 2:
+		execute server command "kelimeoyunu2"
+	if {kelime} is 3:
+		execute server command "kelimeoyunu3"
+	if {kelime} is 4:
+		execute server command "kelimeoyunu4"
+	if {kelime} is 5:
+		execute server command "kelimeoyunu5"
+	if {kelime} is 6:
+		execute server command "kelimeoyunu6"
+	if {kelime} is 7:
+		execute server command "kelimeoyunu7"
+	if {kelime} is 8:
+		execute server command "kelimeoyunu8"
+	if {kelime} is 9:
+		execute server command "kelimeoyunu9"
+	if {kelime} is 10:
+		execute server command "kelimeoyunu10"

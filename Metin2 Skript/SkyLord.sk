@@ -1,0 +1,19 @@
+options:
+	komut1: /manuadd %player% skylord askyblock
+	komut1a: /manuadd %player% skylord spawn
+	komut3: /manuadd %player% oyuncu askyblock
+	komut3a: /manuadd %player% oyuncu spawn
+	skylordoldumesaj: &6&l>&b&lBasariyla SkyLord oldun.
+	lordolamadin: &6&l>&b&lMalesef SkyLord olamazsin.
+	lordsilindi: &6&l>&b&lSkylord Silindi.
+	
+command /skylord [<text>]:
+	trigger:
+		if arg 1 is "ol":
+			player has permission "skylord.ol":
+				execute console command "{@komut1}"
+				execute console command "{@komut1a}"
+				send "{@skylordoldumesaj}"
+			else:
+				send "{@lordolamadin}"
+				

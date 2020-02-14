@@ -1,0 +1,16 @@
+options:
+	komut: /sanslikutu
+	komut2: /event
+	komut3: /servermusic playallrandom
+
+every 3 hours:
+	broadcast "&6&l[&2&lSlime&f&lNW&b&lEvent&6&l] &e1 dakika icerisinde event baslayacaktir. Lutfen envanterinizde dagitilacak esyalar icin yer aciniz."  
+	wait 1 minutes
+	execute console command "{@komut2}"
+	wait 2 seconds
+	execute console command "{@komut}"
+	wait 1 seconds 
+	broadcast "&6&l[&2&lSlime&f&lNW&b&lEvent&6&l] &e&lEvent tamamlandi. Iyi Oyunlar."
+	
+every 5 minutes:
+	give players 1 iron ingot

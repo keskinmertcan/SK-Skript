@@ -1,0 +1,47 @@
+options:
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	Mob Name21: &8[&aAc Kurt &6Sv.1&8]
+
+on death of wolf:
+    attacker is a player:
+        victim is wolf:
+            if name of wolf is "{@Mob Name21}":
+                clear drops
+                wait 2 tick
+                drop 3 {@biryang} of protection 1 named "&61 Yang" at victim's location
+                drop 1 bone of protection 1 named "&6Ac Kurt Kemigi" at victim's location
+				
+options:
+    Spawn Chance2: 90
+    Mob Name2: &8[&aAc Kurt &6Sv.1&8]
+    Mob Type2: wolf
+    Mob Health2: 1
+    Mob Strength: 1
+    Mob Speed: 3
+    Mob Jump Height: 5
+    Mob Resistance: 1
+	
+command /spawnla:
+    trigger:
+        spawn a {@Mob Type2} at {bosszombie}
+        set spawned {@Mob Type2}'s display name to "{@Mob Name2}"
+        set spawned {@Mob Type2}'s max health to {@Mob Health2}
+        heal the spawned {@Mob Type2} by 20 hearts
+		
+command /bossitembelirle:
+    permission: admin.perm
+    trigger:
+        give 1 name tag named "&7[&4Ac Kurt&7] &9Spawn Belirle" to player
+ 
+on rightclick with name tag:
+    if tool's name is "&7[&4Ac Kurt&7] &9Boss Spawn Belirle":
+        set {bosszombie} to location 1 meters above clicked block
+        send "&7[&4Ac Kurt&7] &aSpawn Yeri Basarıylar Secildi!"
+		
+options:
+	komut: /spawnla
+		
+every 180 seconds:
+	execute console command "{@komut}"

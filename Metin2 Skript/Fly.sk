@@ -1,0 +1,17 @@
+on command "/warp":
+	execute console command "fly %player% off"
+
+on command "/spawn":
+	execute console command "fly %player% off"
+	
+on command "/tpaccept":
+	execute console command "fly %player% off"
+	
+on command "/tpa":
+	execute console command "fly %player% off"
+	
+on death of player:
+	execute console command "fly %player% off"
+	
+on command "/home":
+	execute console command "fly %player% off"

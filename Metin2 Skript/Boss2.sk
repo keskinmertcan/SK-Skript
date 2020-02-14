@@ -1,0 +1,34 @@
+options:
+	prefix: &aS&fNW &6&l>
+	bossismi: &4&lMT2KralKurt
+	bossdunyasi: valley
+	kacdkdabir: 90
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	kdp: Iron Sword
+	bosstype: wolf
+	dolunay: Diamond Sword		
+
+on death of wolf:
+	attacker is a player:
+		victim is wolf:
+			if name of wolf is "{@bossismi}":
+				clear drops
+				wait 2 tick
+				drop 100 {@biryang} of protection 1 named "&61 Yang" at victim's location
+				drop 15 {@onyang} of protection 1 named "&610 Yang" at victim's location
+				drop 20 {@yuzyang} of protection 1 named "&6100 Yang" at victim's location
+				drop 40 bone of protection 1 named "&6Ac Kurt Kemigi" at victim's location
+				drop 25 diamond at victim's location
+				drop 1 {@dolunay} of sharpness 1 named "&4Kirik &cDolunay" at victim's location
+				
+on damage of entity:
+	attacker is a player
+	victim is a wolf
+	attacker's world is "{@bossdunyasi}":
+		victim's name is "{@bossismi}":
+			send " {@prefix} {@bossismi}'nin &4&l %health of victim% &2canı kaldı!" to attacker
+
+every {@kacdkdabir} minute:
+	execute console command "boss spawn wolf"

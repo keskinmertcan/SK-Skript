@@ -1,0 +1,19 @@
+command /setspawnd:
+    description: SetSpawn
+    usage: /setspawnd
+    permission: skript.spawn
+    trigger:
+        set {spawn} to location of player
+        message "Spawn kaydedildi!"
+        stop    
+   
+on first join:
+    teleport player to {spawn}
+    stop   
+
+on join:
+    teleport player to {spawn}
+    stop
+
+on command "is ms":
+	cancel event

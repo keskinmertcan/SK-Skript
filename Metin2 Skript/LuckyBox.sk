@@ -1,0 +1,35 @@
+on skript start:
+		add diamond to {liste::*}
+		add gold ingot to {liste::*}
+		add iron ingot to {liste::*}
+		add coal block to {liste::*}
+		add emerald to {liste::*}
+		add iron sword to {liste::*}
+		add iron pickaxe to {liste::*}
+		add steak to {liste::*}
+		add diamond chestplate to {liste::*}
+		add diamond helmet to  {liste::*}
+		add golden apple to {liste::*}
+		add lava bucket to {liste::*}
+		add diamond boots to {liste::*}
+		add gold block to {liste::*}
+		add sponge to {liste::*}
+		add sand to {liste::*}
+		add grass to {liste::*}
+		add tnt to {liste::*}
+#dd
+on rightclick holding a chest:
+		if display name of tool is "<green>S<white>NW<red>Sansli Kutu":
+				cancel event
+				play raw sound "random.levelup" at player with pitch 1 volume 10
+				play raw sound "game.potion.smash" at player with pitch 1 volume 10
+				set {_kutu} to random element out of {liste::*}
+				give player a random item out of {_kutu}
+				remove 1 chest named "<green>S<white>NW<red>Sansli Kutu" from player
+				
+#Chest koyuluyor chest'in adı Kırmızı Sansli Kutu ise eventi durdurucak sesleri oynatıp variable içinden random bir eşya vericek. En sonunda ise sansli kutuyu silicek.
+command /sanslikutu:
+		permission: sansli.kutu
+		trigger:
+				give players chest named "<green>S<white>NW<red>Sansli Kutu"
+#Kutuyu alabilmek için komut.

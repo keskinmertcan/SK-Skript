@@ -1,0 +1,30 @@
+options:
+	prefix: &aS&fNW &6&l>
+	bossismi: &8[&aAc Kurt &6Sv.1&8]
+	bossdunyasi: valley
+	kacdkdabir: 120
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	kdp: Iron Sword
+	bosstype: wolf
+	dolunay: Diamond Sword
+	artibasma: sugar
+	parca: Gray Dye
+
+on death of wolf:
+	attacker is a player:
+		victim is wolf:
+			if name of wolf is "{@bossismi}":
+				clear drops
+				wait 2 tick
+				
+on damage of entity:
+	attacker is a player
+	victim is a wolf
+	attacker's world is "{@bossdunyasi}":
+		victim's name is "{@bossismi}":
+			send " {@prefix} {@bossismi}'nin &4&l %health of victim% &2canı kaldı!" to attacker
+
+every {@kacdkdabir} second:
+	execute console command "boss spawn acwolf"

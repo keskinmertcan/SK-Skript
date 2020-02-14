@@ -1,0 +1,272 @@
+﻿options:
+	AnahtarItem: tripwire hook
+	AnahtarIsim: &bKasa Anahtarı
+	Snwisim: &2S&fNW&6Credi
+	Snwitem: paper
+	Prefix: &2S&fNW&bKasa &8&l»&7 
+	KasaMenusuAdi: &2Slime&fNetwork&6 Kasası
+ 
+on script load:
+	loop all players:
+		if {kasaAciliyor::%loop-player%} is true:
+			clear {kasaAciliyor::%loop-player%}
+	clear {kasaAciliyor}
+	clear {_itemler::*}
+	set {Kasa::Esyalar::item::1} to "32 ender pearl"
+	set {Kasa::Esyalar::item::2} to "32 ender pearl"
+	set {Kasa::Esyalar::item::3} to "10 iron blocks"
+	set {Kasa::Esyalar::item::4} to "1 diamond chestplate of protection 3"
+	set {Kasa::Esyalar::item::5} to "1 diamond chestplate of protection 3"
+	set {Kasa::Esyalar::item::6} to "16 glowstone"
+	set {Kasa::Esyalar::item::7} to "10 redstone blocks"
+	set {Kasa::Esyalar::item::8} to "10 gold blocks"
+	set {Kasa::Esyalar::item::9} to "10 gold blocks"
+	set {Kasa::Esyalar::item::10} to "diamond sword of sharpness 4"
+	set {Kasa::Esyalar::item::11} to "10 lapis blocks"
+	set {Kasa::Esyalar::item::12} to "2 diamond blocks"
+	set {Kasa::Esyalar::item::13} to "2 diamond blocks"
+	set {Kasa::Esyalar::item::14} to "nether star"
+	set {Kasa::Esyalar::item::15} to "diamond axe of efficiency 5"
+	set {Kasa::Esyalar::item::16} to "2 emerald block"
+	set {Kasa::Esyalar::item::17} to "4 emerald block"
+	set {Kasa::Esyalar::item::18} to "2 emerald block"
+	set {Kasa::Esyalar::item::19} to "nether star"
+	set {Kasa::Esyalar::item::20} to "16 tnt"
+	set {Kasa::Esyalar::item::21} to "20 obsidian"
+	set {Kasa::Esyalar::item::22} to "16 obsidian"
+	set {Kasa::Esyalar::item::23} to "2 anvil"
+
+on quit:
+	if {kasaAciliyor::%player%} is true:
+		clear {kasaAciliyor::%player%}
+		clear {kasaAciliyor}
+	
+command /sandikayarla:
+	trigger:
+		if player has permission "sandik.admin":
+			if targeted block is chest:
+				if {ozelSandik::%location of targeted block%} is not set:
+					set {_loc} to location of targeted block
+					set {ozelSandik::%{_loc}%} to {_loc}
+					send "{@Prefix} Önünüzdeki sandık artık kasa, kasanın özelliğini kaldırmak için /sandikayarla yazabilirsin."
+					stop
+				else if {ozelSandik::%location of targeted block%} is set:
+					clear {ozelSandik::%location of targeted block%}
+					send "{@Prefix} Önünüzdeki sandık artık kasa değil, tekrar kasa yapmak için /sandikayarla yazabilirsin."
+			else:
+				send "{@Prefix} Bunu kullanabilmek için bir sandığa bakman gerek!"
+		else:
+			send "{@Prefix} Bunun için iznin yok"
+
+ 
+on rightclick on chest:
+	if {ozelSandik::%location of event-block%} is set:
+		cancel event
+		if player's tool is {@AnahtarItem}:
+			if name of player's tool is "{@AnahtarIsim}":
+				if {kasaAciliyor} is set:
+					send "{@Prefix} Lütfen bekle, şuanda bu kasa açılıyor.."
+					stop
+				set {_key} to true
+				remove 1 {@AnahtarItem} named "{@AnahtarIsim}" from player's inventory
+				set {kasaAciliyor} to true
+				set {kasaAciliyor::%player%} to true
+				wait 5 tick
+				loop 9 times:
+					add "%{Kasa::Esyalar::item::%random integer between 1 and 23%}%" to {_itemler::*}
+				open chest with 3 rows named "{@KasaMenusuAdi}" to player
+				wait 1 tick
+				loop 9 times:
+					format slot (loop-number - 1) of player with black stained glass pane named "&7" to be unstealable
+				loop 9 times:
+					format slot ((loop-number - 1)+18) of player with black stained glass pane named "&7" to be unstealable
+				format slot 4 of player with red stained glass pane named "&7Senin Eşyan!" to be unstealable
+				format slot 22 of player with red stained glass pane named "&7Senin Eşyan!" to be unstealable
+				set {_loop} to a random integer between 20 and 25
+				loop {_loop} times:
+					set {_item::9} to {_item::8}
+					set {_item::8} to {_item::7}
+					set {_item::7} to {_item::6}
+					set {_item::6} to {_item::5}
+					set {_item::5} to {_item::4}
+					set {_item::4} to {_item::3}
+					set {_item::3} to {_item::2}
+					set {_item::2} to {_item::1}
+					set {_item::1} to "%a random element out of {_itemler::*}%" parsed as material
+					loop 9 times:
+						set {_n} to loop-number-2
+						set {_i} to {_item::%loop-number-2%}
+						if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+							format slot (({_n} - 1)+9) of player with {_item::%loop-number-2%} to be unstealable
+					add 1 to {_ses}
+					if {_ses} > 3:
+						set {_ses} to 1
+					if {_ses} = 1:
+						play raw sound "random.click" at player with pitch 2 volume 0.5
+					if {_ses} = 2:
+						play raw sound "random.click" at player with pitch 1 volume 0.5
+					if {_ses} = 3:
+						play raw sound "random.click" at player with pitch 0 volume 0.5
+					wait 2 ticks
+				set {_loop} to a random integer between 10 and 18
+				loop {_loop} times:
+					set {_item::9} to {_item::8}
+					set {_item::8} to {_item::7}
+					set {_item::7} to {_item::6}
+					set {_item::6} to {_item::5}
+					set {_item::5} to {_item::4}
+					set {_item::4} to {_item::3}
+					set {_item::3} to {_item::2}
+					set {_item::2} to {_item::1}
+					set {_item::1} to "%a random element out of {_itemler::*}%" parsed as material
+					loop 9 times:
+						set {_n} to loop-number-2
+						set {_i} to {_item::%loop-number-2%}
+						if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+							format slot (({_n} - 1)+9) of player with {_item::%loop-number-2%} to be unstealable
+					add 1 to {_ses}
+					if {_ses} > 3:
+						set {_ses} to 1
+					if {_ses} = 1:
+						play raw sound "random.click" at player with pitch 2 volume 0.5
+					if {_ses} = 2:
+						play raw sound "random.click" at player with pitch 1 volume 0.5
+					if {_ses} = 3:
+						play raw sound "random.click" at player with pitch 0 volume 0.5
+					wait 4 ticks
+				set {_loop} to a random integer between 7 and 15
+				loop {_loop} times:
+					set {_item::9} to {_item::8}
+					set {_item::8} to {_item::7}
+					set {_item::7} to {_item::6}
+					set {_item::6} to {_item::5}
+					set {_item::5} to {_item::4}
+					set {_item::4} to {_item::3}
+					set {_item::3} to {_item::2}
+					set {_item::2} to {_item::1}
+					set {_item::1} to "%a random element out of {_itemler::*}%" parsed as material
+					loop 9 times:
+						set {_n} to loop-number-2
+						set {_i} to {_item::%loop-number-2%}
+						if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+							format slot (({_n} - 1)+9) of player with {_item::%loop-number-2%} to be unstealable
+					add 1 to {_ses}
+					if {_ses} > 3:
+						set {_ses} to 1
+					if {_ses} = 1:
+						play raw sound "random.click" at player with pitch 2 volume 0.5
+					if {_ses} = 2:
+						play raw sound "random.click" at player with pitch 1 volume 0.5
+					if {_ses} = 3:
+						play raw sound "random.click" at player with pitch 0 volume 0.5
+					wait 6 ticks
+				set {_loop} to a random integer between 3 and 7
+				loop {_loop} times:
+					set {_item::9} to {_item::8}
+					set {_item::8} to {_item::7}
+					set {_item::7} to {_item::6}
+					set {_item::6} to {_item::5}
+					set {_item::5} to {_item::4}
+					set {_item::4} to {_item::3}
+					set {_item::3} to {_item::2}
+					set {_item::2} to {_item::1}
+					set {_item::1} to "%a random element out of {_itemler::*}%" parsed as material
+					loop 9 times:
+						set {_n} to loop-number-2
+						set {_i} to {_item::%loop-number-2%}
+						if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+							format slot (({_n} - 1)+9) of player with {_item::%loop-number-2%} to be unstealable
+					add 1 to {_ses}
+					if {_ses} > 3:
+						set {_ses} to 1
+					if {_ses} = 1:
+						play raw sound "random.click" at player with pitch 2 volume 0.5
+					if {_ses} = 2:
+						play raw sound "random.click" at player with pitch 1 volume 0.5
+					if {_ses} = 3:
+						play raw sound "random.click" at player with pitch 0 volume 0.5
+					wait 8 ticks
+				set {_loop} to a random integer between 1 and 3
+				loop {_loop} times:
+					set {_item::9} to {_item::8}
+					set {_item::8} to {_item::7}
+					set {_item::7} to {_item::6}
+					set {_item::6} to {_item::5}
+					set {_item::5} to {_item::4}
+					set {_item::4} to {_item::3}
+					set {_item::3} to {_item::2}
+					set {_item::2} to {_item::1}
+					set {_item::1} to "%a random element out of {_itemler::*}%" parsed as material
+					loop 9 times:
+						set {_n} to loop-number-2
+						set {_i} to {_item::%loop-number-2%}
+						if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+							format slot (({_n} - 1)+9) of player with {_item::%loop-number-2%} to be unstealable
+					add 1 to {_ses}
+					if {_ses} > 3:
+						set {_ses} to 1
+					if {_ses} = 1:
+						play raw sound "random.click" at player with pitch 2 volume 0.5
+					if {_ses} = 2:
+						play raw sound "random.click" at player with pitch 1 volume 0.5
+					if {_ses} = 3:
+						play raw sound "random.click" at player with pitch 0 volume 0.5
+					wait 10 ticks
+				set {_item} to {_item::5}
+				if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+					format slot 9 of player with gold ingot named "&7" to be unstealable
+					format slot 17 of player with gold ingot named "&7" to be unstealable
+				wait 5 ticks
+				if inventory name of player's current inventory contains "{@KasaMenusuAdi}":		
+					format slot 10 of player with gold ingot named "&7" to be unstealable
+					format slot 16 of player with gold ingot named "&7" to be unstealable
+				wait 5 ticks
+				if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+					format slot 11 of player with gold ingot named "&7" to be unstealable
+					format slot 15 of player with gold ingot named "&7" to be unstealable
+				wait 5 ticks
+				if inventory name of player's current inventory contains "{@KasaMenusuAdi}":
+					format slot 12 of player with gold ingot named "&7" to be unstealable
+					format slot 14 of player with gold ingot named "&7" to be unstealable
+				play raw sound "fireworks.twinkle" at player with pitch 1 volume 2
+				wait 40 ticks
+				give player {_item}
+				message "{@Prefix} Tebrikler, kazandığın eşya &b%{_item}%&7!"
+				broadcast "{@Prefix} &6%player%, &7kasadan şu eşyayı kazandı: &b%{_item}%"
+				play raw sound "random.successful_hit" at player with pitch 1 volume 10
+				clear {kasaAciliyor}
+				clear {kasaAciliyor::%player%}
+				clear {_itemler::*}
+				close player's inventory
+				stop
+			else:
+				send "{@Prefix} Bu eşya bir kasa anahtarı değil!"
+				stop
+		else:
+			send "{@Prefix} Lütfen elinde {@AnahtarItem} eşyasını tut!"
+			stop
+
+on inventory close:
+	if {kasaAciliyor} is set:
+		if {kasaAciliyor::%player%} is set:
+			wait 1 tick
+			open chest with 3 rows named "{@KasaMenusuAdi}" to player
+			wait 1 tick
+			loop 9 times:
+				format slot (loop-number - 1) of player with black stained glass pane named "&7" to be unstealable
+			loop 9 times:
+				format slot ((loop-number - 1)+18) of player with black stained glass pane named "&7" to be unstealable
+			format slot 4 of player with red stained glass pane named "&7Senin Eşyan!" to be unstealable
+			format slot 22 of player with red stained glass pane named "&7Senin Eşyan!" to be unstealable
+		
+on break of chest:
+	if {ozelSandik::%location of event-block%} is set:	
+		cancel event
+		
+command /anahtarver:
+	trigger:
+		if player has permission "sandik.admin":
+			send "{@Prefix} Anahtar envantere eklendi."
+			give 1 {@AnahtarItem} of unbreaking 10 named "{@AnahtarIsim}" to player
+		else:
+			send "{@Prefix} Bunun için iznin yok"

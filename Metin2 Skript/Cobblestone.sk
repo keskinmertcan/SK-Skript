@@ -1,0 +1,41 @@
+options:
+	komut: /fly %player% off
+
+on break of cobblestone:
+	cancel event
+	set block to air
+	give player 4 cobblestone
+	
+on break of cobblestone:
+	chance of 10%:
+		give a iron ingot to player
+		send " &2&l>&6&lCobbleStone Kazarken &f&lDemir &6&lBuldun!"
+
+on break of cobblestone:
+	chance of 10%:
+		give a gold ingot to player
+		send " &2&l>&6&lCobbleStone Kazarken &e&lAltin &6&lBuldun!"
+		
+on death:
+	attacker is player
+	chance of 5%:
+		give a gold nugget to player
+		send " &2&l>&6&lAvcilik Yaparken &e&lAltin Parcasi &6&lBuldun!"
+		
+on walking on packed ice:
+	teleport player to {bolge}
+	execute console command "{@komut}"
+	
+command /belirle:
+    permission: sv.admin
+    trigger:
+        set {bolge} to location of player
+        send "&bBolge kaydedildi."
+		
+on break of cobblestone:
+	if chance of 10%:
+		give 1 gold nugget of protection 1 named "&2S&fNW&6Coin" to player
+		send " &2&l>&6&lCobbleStone Kazarken &2S&fNW&6Coin &6&lBuldun!"
+		
+on walking on emerald ore:
+	execute console command "{@komut}"

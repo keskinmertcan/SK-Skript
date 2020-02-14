@@ -1,0 +1,15 @@
+Command /chat <text>:
+    permission: chat.kilit
+    trigger:
+        if arg 1 is "kapat":
+            set {kilitli} to true
+            broadcast "&2S&fNW&8&l» &aSohbet Kapatildi!"
+        else:
+            if arg 1 is "ac":
+                set {kilitli} to false
+                broadcast "&2S&fNW&8&l» &aSohbet Aktif!"
+
+on chat:
+    {kilitli} is true:
+        cancel event
+        send "&2S&fNW&8&l» &9Sohbet kapalidir, &4konusamazsin!" to player

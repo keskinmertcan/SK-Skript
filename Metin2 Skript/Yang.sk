@@ -1,0 +1,128 @@
+options:
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	dolunay: Diamond Sword
+	artibasma: Sugar
+	kdp: Iron Sword
+
+command /biryang:
+		permission: yang.yan
+		trigger:
+				give 1 {@biryang} of protection 1 named "&61 Yang" to player
+				
+command /onyang:
+		permission: yang.yan
+		trigger:
+				give 1 {@onyang} of protection 1 named "&610 Yang" to player
+				
+command /yuzyang:
+		permission: yang.yan
+		trigger:
+				give 1 {@yuzyang} of protection 1 named "&6100 Yang" to player
+				
+command /dolunay9:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 9 named "&c+9 Dolunay" to player
+				
+command /dolunay8:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 8 named "&c+8 Dolunay" to player
+				
+command /dolunay7:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 7 named "&c+7 Dolunay" to player
+				
+command /dolunay6:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 6 named "&c+6 Dolunay" to player
+				
+command /dolunay5:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 5 named "&c+5 Dolunay" to player
+				
+command /dolunay4:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 4 named "&c+4 Dolunay" to player
+				
+command /dolunay3:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 3 named "&c+3 Dolunay" to player
+				
+command /dolunay2:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 2 named "&c+2 Dolunay" to player
+				
+command /dolunay1:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 1 named "&c+1 Dolunay" to player
+				
+command /dolunay0:
+		permission: dolu.nay
+		trigger:
+				give 1 {@dolunay} of sharpness 1 named "&4Kirik &cDolunay" to player
+				
+command /artibasma:
+		permission: arti.basma
+		trigger:
+				give 1 {@artibasma} of protection 1 named "&c+ Basma Itemi" to player
+				
+command /kdp9:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 9 named "&c+9 KDP" to player
+								
+command /kdp8:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 8 named "&c+8 KDP" to player
+								
+command /kdp7:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 7 named "&c+7 KDP" to player			
+				
+command /kdp6:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 6 named "&c+6 KDP" to player		
+				
+command /kdp5:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 5 named "&c+5 KDP" to player			
+				
+command /kdp4:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 4 named "&c+4 KDP" to player		
+				
+command /kdp3:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 3 named "&c+3 KDP" to player			
+				
+command /kdp2:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 2 named "&c+2 KDP" to player			
+			
+command /kdp1:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 1 named "&c+1 KDP" to player			
+				
+command /kdp0:
+		permission: dolu.nay
+		trigger:
+				give 1 {@kdp} of sharpness 1 named "&4Kirik&c KDP" to player
+				

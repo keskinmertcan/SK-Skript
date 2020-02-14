@@ -1,0 +1,80 @@
+options:
+	prefix: &aS&fNW &6&l>
+	bossismi: &4&lMT2Boss
+	bossdunyasi: valley
+	kacdkdabir: 30
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	kdp: Iron Sword
+	bosstype: Spider
+	bosstype2: Wolf
+	bossismi2: &4&lMT2KralKurt
+	bossismi3: &4&lMT2DevZombie
+	bosstype3: Giant
+	bossismi4: &8[&aAc Kurt &6Sv.1&8]
+
+command /boss [<text>] [<text>]:
+	permission: sk.boss
+	permission message: &cBunu yapmak icin yetkiniz yok!
+	trigger:
+		if arg 1 is "sec":
+			if arg 2 is "spider":
+				set {boss.dogma.spider} to location of player
+				send " {@prefix} &a{@bossismi} &badlı bosun dogma yeri secildi!"
+			if arg 2 is "wolf":
+				set {boss.dogma.wolf} to location of player
+				send " {@prefix} &a{@bossismi2} &badlı bosun dogma yeri secildi!"
+			if arg 2 is "giant":
+				set {boss.dogma.giant} to location of player
+				send " {@prefix} &a{@bossismi3} &badlı bosun dogma yeri secildi!"
+			if arg 2 is "acwolf":
+				set {boss.dogma.acwolf} to location of player
+				send " {@prefix} &a{@bossismi4} &badlı bosun dogma yeri secildi!"
+		if arg 1 is "spawn":
+			if arg 2 is "spider":
+				spawn 1 spider at {boss.dogma.spider}
+				set spawned {@bosstype}'s display name to "{@bossismi}"
+				set maximum health of last spawned spider to 750
+				set health of last spawned spider to 750
+				broadcast " {@prefix} &6&l{@bossismi} &2adlı boss doğdu. Dikkat edin!"
+			if arg 2 is "wolf":
+				spawn 1 wolf at {boss.dogma.wolf}
+				set spawned {@bosstype2}'s display name to "{@bossismi2}"
+				set maximum health of last spawned wolf to 1500
+				set health of last spawned wolf to 1500
+				broadcast " {@prefix} &6&l{@bossismi2} &2adlı boss doğdu. Dikkat edin!"	
+			if arg 2 is "giant":
+				spawn 1 giant at {boss.dogma.giant}
+				set spawned {@bosstype3}'s display name to "{@bossismi3}"
+				set maximum health of last spawned giant to 3000
+				set health of last spawned giant to 3000
+				broadcast " {@prefix} &6&l{@bossismi3} &2adlı boss doğdu. Dikkat edin!"	
+			if arg 2 is "acwolf":
+				spawn 1 wolf at {boss.dogma.acwolf}
+				set spawned {@bosstype2}'s display name to "{@bossismi4}"
+				set maximum health of last spawned wolf to 1
+				set health of last spawned giant to 1
+
+on death of spider:
+	attacker is a player:
+		victim is spider:
+			if name of spider is "{@bossismi}":
+				clear drops
+				wait 2 tick
+				drop 30 {@biryang} of protection 1 named "&61 Yang" at victim's location
+				drop 10 {@onyang} of protection 1 named "&610 Yang" at victim's location
+				drop 10 {@yuzyang} of protection 1 named "&6100 Yang" at victim's location
+				drop 1 {@kdp} of sharpness 1 named "&4Kirik&c KDP" at victim's location
+				drop 25 bone of protection 1 named "&6Ac Kurt Kemigi" at victim's location
+				drop 10 diamond at victim's location
+				
+on damage of entity:
+	attacker is a player
+	victim is a spider
+	attacker's world is "{@bossdunyasi}":
+		victim's name is "{@bossismi}":
+			send " {@prefix} {@bossismi}'nin &4&l %health of victim% &2canı kaldı!" to attacker
+
+every {@kacdkdabir} minute:
+	execute console command "boss spawn spider"

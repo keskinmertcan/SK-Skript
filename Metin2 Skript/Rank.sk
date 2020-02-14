@@ -1,0 +1,108 @@
+on death:
+    attacker is a player
+    victim is a player
+    add 2 to {csgo::%attacker%}
+    add -1 to {csgo::%victim%}
+    if {csgo::%attacker%} is 10:
+        send "&a10 &6puana sahipsin" to attacker
+        loop 2 times:
+            execute console command "/playsound fireworks.largeBlast %attacker%"
+            execute console command "/manuadd %attacker% silverbir"
+            send "&7 >> &aSilver I &4rankina terfi edildin!" to attacker
+    else:   
+        if {csgo::%attacker%} is 30:
+            send "&630 puana sahipsin" to attacker
+            loop 2 times:
+                execute console command "/playsound fireworks.largeBlast %attacker%"
+                execute console command "/manuadd %attacker% silveriki"
+                send "&7 >> &aSilver II &4rankina terfi edildin!" to attacker
+        else:
+            if {csgo::%attacker%} is 50:
+                send "&650 puana sahipsin" to attacker
+                loop 2 times:
+                    execute console command "/playsound fireworks.largeBlast %attacker%"
+                    execute console command "/manuadd %attacker% silveruc"
+                    send "&7 >> &aSilver III &4rankina terfi edildin!" to attacker
+            else:
+                if {csgo::%attacker%} is 60:
+                    send "&660 puana sahipsin" to attacker
+                    loop 2 times:
+                        execute console command "/playsound fireworks.largeBlast %attacker%"
+                        execute console command "/manuadd %attacker% novabir"
+                        send "&7 >> &aNova I &4rankina terfi edildin!" to attacker
+                else:
+                    if {csgo::%attacker%} is 80:
+                        send "&680 puana sahipsin" to attacker
+                        loop 2 times:
+                            execute console command "/playsound fireworks.largeBlast %attacker%"
+                            execute console command "/manuadd %attacker% novaiki"
+                            send "&7 >> &aNova II &4rankina terfi edildin!" to attacker
+                    else:
+                        if {csgo::%attacker%} is 150:
+                            send "&6150 puana sahipsin" to attacker
+                            loop 2 times:
+                                execute console command "/playsound fireworks.largeBlast %attacker%"
+                                execute console command "/manuadd %attacker% novauc"
+                                send "&7 >> &aNova III &4rankina terfi edildin!" to attacker
+                        else:
+                            if {csgo::%attacker%} is 200:
+                                send "&6200 puana sahipsin" to attacker
+                                loop 2 times:
+                                    execute console command "/playsound fireworks.largeBlast %attacker%"
+                                    execute console command "/manuadd %attacker% keles"
+                                    send "&7 >> &aKeles &4rankina terfi edildin!" to attacker
+                            else:
+                                if {csgo::%attacker%} is 230:
+                                    send "&6230 puana sahipsin" to attacker
+                                    loop 2 times:
+                                        execute console command "/playsound fireworks.largeBlast %attacker%"
+                                        execute console command "/manuadd %attacker% guzide"
+                                        send "&7 >> &aGuzide &4rankina terfi edildin!" to attacker
+                                else:
+                                    if {csgo::%attacker%} is 270:
+                                        send "&6270 puana sahipsin" to attacker
+                                        loop 2 times:
+                                            execute console command "/playsound fireworks.largeBlast %attacker%"
+                                            execute console command "/manuadd %attacker% supreme"
+                                            send "&7 >> &aSupreme &4rankina terfi edildin!" to attacker
+                                    else:
+                                        if {csgo::%attacker%} is 300:
+                                            send "&6300 puana sahipsin" to attacker
+                                            loop 2 times:
+                                                execute console command "/playsound fireworks.largeBlast %attacker%"
+                                                execute console command "/manuadd %attacker% global"
+                                                send "&7 >> &aGlobal Elite &4rankina terfi edildin! Mukemmelsin!" to attacker
+
+
+command /ranksifirla <text>:
+    permission: rank.sifirla
+    permission message: &cMaalesef buna yetkin yok!
+    trigger:
+        delete {csgo::%arg%}
+        send "&7 >> &b%arg 1% Adli Oyuncunun Rank'i sifirlandi." to player
+       
+     
+command /rankbak:
+    trigger:
+        if {csgo::%player%} is 10:
+            send "&7 >> &aRankiniz &6: &4&lSILVER I" to player
+        if {csgo::%player%} is 30:
+            send "&7 >> &aRankiniz &6: &4&lSILVER II" to player
+        if {csgo::%player%} is 50:
+            send "&7 >> &aRankiniz &6: &4&lSILVER III" to player
+        if {csgo::%player%} is 60:
+            send "&7 >> &aRankiniz &6: &4&lNOVA I" to player
+        if {csgo::%player%} is 80:
+            send "&7 >> &aRankiniz &6: &4&lNOVA II" to player
+        if {csgo::%player%} is 150:
+            send "&7 >> &aRankiniz &6: &4&lNOVA III" to player
+        if {csgo::%player%} is 200:
+            send "&7 >> &aRankiniz &6: &4&lGuardian" to player
+        if {csgo::%player%} is 230:
+            send "&7 >> &aRankiniz &6: &4&lLEGENDARY" to player
+        if {csgo::%player%} is 270:
+            send "&7 >> &aRankiniz &6: &4&lSUPREME" to player
+        if {csgo::%player%} is 300:
+            send "&7 >> &aRankiniz &6: &4&lGLOBAL ELITE" to player
+        else:   
+            send "&7 >> Henuz Bir Rank'iniz yok."

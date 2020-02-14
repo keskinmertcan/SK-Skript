@@ -1,0 +1,19 @@
+options:
+	komut1: /manuadd %player% minilord askyblock
+	komut1a: /manuadd %player% minilord spawn
+	komut3: /manuadd %player% oyuncu askyblock
+	komut3a: /manuadd %player% oyuncu spawn
+	skylordoldumesaj: &6&l>&b&lBasariyla MiniLord oldun.
+	lordolamadin: &6&l>&b&lMalesef MiniLord olamazsin.
+	lordsilindi: &6&l>&b&lMinilord Silindi.
+	
+command /minilord [<text>]:
+	trigger:
+		if arg 1 is "ol":
+			player has permission "minilord.ol":
+				execute console command "{@komut1}"
+				execute console command "{@komut1a}"
+				send "{@skylordoldumesaj}"
+			else:
+				send "{@lordolamadin}"
+				

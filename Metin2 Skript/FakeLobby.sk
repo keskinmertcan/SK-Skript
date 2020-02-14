@@ -1,0 +1,19 @@
+on command "/login":
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c3 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c2 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c1 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılıyorsunuz!"
+    execute player command "/spawn"
+
+on command "/register":
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c3 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c2 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılmanıza son &c1 &asaniye!"
+    wait 1 real seconds
+    send "&aSlime&fNetwork &8&l» &aSunucuya aktarılıyorsunuz!"
+    execute player command "/spawn"

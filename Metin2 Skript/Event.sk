@@ -1,0 +1,9 @@
+command /event:
+    permission: event.yap
+    permission message: Bu komut icin yeterli yetkiye sahip degilsin
+    trigger:
+        give players 2 diamond
+        give players 2 emerald
+        give players 10 iron ingot
+        give players 10 gold ingot
+        give players 10 redstone

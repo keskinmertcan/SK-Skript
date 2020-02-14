@@ -1,0 +1,41 @@
+options:
+	prefix: &aS&fNW &6&l>
+	bossismi: &4&lMT2DevZombie
+	bossdunyasi: valley
+	kacdkdabir: 120
+	biryang: Dandelion Yellow
+	onyang: Orange Dye
+	yuzyang: Cyan Dye
+	kdp: Iron Sword
+	bosstype: giant
+	dolunay: Diamond Sword
+	artibasma: sugar
+	parca: Gray Dye
+
+on death of giant:
+	attacker is a player:
+		victim is giant:
+			if name of giant is "{@bossismi}":
+				clear drops
+				wait 2 tick
+				drop 100 {@biryang} of protection 1 named "&61 Yang" at victim's location
+				drop 15 {@onyang} of protection 1 named "&610 Yang" at victim's location
+				drop 20 {@yuzyang} of protection 1 named "&6100 Yang" at victim's location
+				drop 40 bone of protection 1 named "&6Ac Kurt Kemigi" at victim's location
+				drop 25 diamond at victim's location
+				drop 2 {@dolunay} of sharpness 1 named "&4Kirik &cDolunay" at victim's location
+				drop 5 {@artibasma} of protection 1 named "&c+ Basma Itemi" at victim's location
+				drop 15 emerald
+				drop 20 {@parca} of protection 1 named "&2S&fNW&c-&6MetinTasiParcasi" at victim's location
+				drop 40 book of protection 1 named "&2S&fNW&c-&6BeceriKitabi" at victim's location
+				drop 256 iron ingot
+				
+on damage of entity:
+	attacker is a player
+	victim is a giant
+	attacker's world is "{@bossdunyasi}":
+		victim's name is "{@bossismi}":
+			send " {@prefix} {@bossismi}'nin &4&l %health of victim% &2canı kaldı!" to attacker
+
+every {@kacdkdabir} minute:
+	execute console command "boss spawn giant"
